@@ -1,4 +1,5 @@
 include mixins/button
+
 header.header
     input#menu-toggle(type="checkbox" class="menu-checkbox")
 
@@ -9,18 +10,19 @@ header.header
         .header__actions
             a.header__icon(href="tel:+123455555555") 
                 img(src="/src/assets/icon-phone.svg", alt="Telephone")
+            
             label.header__burger(for="menu-toggle")
-                img(src="/src/assets/icon-burger-menu.svg", alt="burger")
-
+                img(src="/src/assets/icon-burger-menu.png", alt="burger")
 
     nav.overlay-menu
-        .container.mobile-menu__inner
+        .container.overlay-menu__inner
             .overlay-menu__top
                 a.logo(href="/") 
                     img(src="/src/assets/logo.svg", alt="NOTHING (R)")
                 
                 label.overlay-menu__close(for="menu-toggle") 
-                    img(src="/src/assets/icon-cross.svg", alt="Cross")          
+                    img(src="/src/assets/icon-cross.svg", alt="Close")          
+            
             ul.overlay-menu__list
                 each link in navLinks
                     li.overlay-menu__item

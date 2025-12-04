@@ -1,6 +1,7 @@
 section.hero
-    .container.hero__inner
-        .hero__image-wrapper
-            img.hero__img(src=`/src/assets/${hero.image}` alt="Nothing Phone")
+    .hero__bg
+        img.hero__img(src=`/src/assets/${hero.image}` alt=hero.title)
+
+    .container.hero__container
         .hero__content
             h1.hero__title= hero.title

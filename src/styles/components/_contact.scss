@@ -12,7 +12,7 @@
 
     @media (min-width: map-get($grid-breakpoints, md)) {
       font-size: 3rem;
-      margin-bottom: 3rem;
+      margin-bottom: 4rem; // Більший відступ від заголовка до форми
     }
   }
 
@@ -21,22 +21,28 @@
     flex-direction: column;
     gap: 3rem;
 
+    // Вмикаємо сітку на ТАБЛЕТІ
     @media (min-width: map-get($grid-breakpoints, md)) {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
       align-items: start;
-    }
-
-    @media (min-width: map-get($grid-breakpoints, lg)) {
-      gap: 100px; 
-      grid-template-columns: 7fr 5fr;
     }
   }
 
   &__form {
     display: flex;
     flex-direction: column;
+    
+    // Форма займає 6 колонок (половина)
+    @media (min-width: map-get($grid-breakpoints, md)) {
+      grid-column: span 6;
+    }
+
+    // На великому екрані можна трохи звузити, якщо треба (span 5)
+    @media (min-width: map-get($grid-breakpoints, xl)) {
+        grid-column: span 5;
+    }
     
     .contact__submit {
       width: 100%;
@@ -50,8 +56,10 @@
     flex-direction: column;
     gap: 2rem;
 
+    // Інфо починається з 8-ї колонки (залишаємо пусте місце посередині)
     @media (min-width: map-get($grid-breakpoints, md)) {
-      padding-top: 1rem;
+      grid-column: 8 / -1; 
+      padding-top: 0; // Вирівнюємо по верху з формою
     }
   }
 
@@ -75,6 +83,7 @@
   }
 }
 
+// Стиль для textarea (глобально або тут)
 textarea.ui-input {
   resize: vertical;
   min-height: 150px;
