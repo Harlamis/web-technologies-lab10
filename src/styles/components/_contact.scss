@@ -1,0 +1,81 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.contact {
+  padding: 4rem 0 6rem;
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: $color-text-main;
+
+    @media (min-width: map-get($grid-breakpoints, md)) {
+      font-size: 3rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @media (min-width: map-get($grid-breakpoints, md)) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    @media (min-width: map-get($grid-breakpoints, lg)) {
+      gap: 100px; 
+      grid-template-columns: 7fr 5fr;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    
+    .contact__submit {
+      width: 100%;
+      margin-top: 1rem;
+      padding: 1.2rem;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @media (min-width: map-get($grid-breakpoints, md)) {
+      padding-top: 1rem;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__label {
+    font-size: 0.9rem;
+    color: lighten($color-text-main, 40%);
+  }
+
+  &__value {
+    font-size: 1.1rem;
+    color: $color-text-main;
+    font-weight: 500;
+    font-family: $font-main;
+    line-height: 1.4;
+  }
+}
+
+textarea.ui-input {
+  resize: vertical;
+  min-height: 150px;
+}

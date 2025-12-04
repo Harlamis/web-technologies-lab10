@@ -1,15 +1,116 @@
+@use '../utils/variables' as *;
 @use '../utils/mixins' as *;
 
 .header {
-  // declare mixins before styles
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 1rem 0;
+  background-color: transparent; 
 
-  @include flex-center;
-  background: var(--color-primary);
-  color: white;
-  padding: 1rem;
-  text-align: center;
-
-  h1 {
-    font-size: 2rem;
+  &__inner {
+    @include flex-center;
+    justify-content: space-between;
   }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  &__burger, &__icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;    
+
+    img {
+      width: 24px;       
+      height: 24px;     
+      object-fit: contain; 
+      display: block;   
+    }
+  }
+}
+
+.overlay-menu {
+  position: fixed;
+  inset: 0;
+  background-color: $color-bg-menu;
+  z-index: 200;
+  padding: 1rem 0;
+  
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+
+  &__inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    @media (min-width: map-get($grid-breakpoints, md)) {
+      padding: 0 2rem;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: auto; 
+    
+    @media (min-width: map-get($grid-breakpoints, lg)) {
+        gap: 2rem;
+    }
+  }
+
+  &__link {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $color-text-main;
+    text-transform: capitalize;
+    
+    @media (min-width: map-get($grid-breakpoints, md)) {
+       font-size: 3rem;
+    }
+
+    @media (min-width: map-get($grid-breakpoints, xl)) {
+       font-size: 4rem;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__close {
+    cursor: pointer;
+    display: flex;
+    
+    img {
+      width: 32px;
+      height: 32px;
+      display: block;
+    }
+  }
+}
+
+.menu-checkbox:checked ~ .overlay-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }

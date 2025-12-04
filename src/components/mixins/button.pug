@@ -1,0 +1,5 @@
+mixin btn(text, href=false, type='button', classname='')
+    if href
+        a.ui-button(href=href class=classname)&attributes(attributes)= text
+    else
+        button.ui-button(type=type class=classname)&attributes(attributes)= text

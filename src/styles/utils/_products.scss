@@ -1,0 +1,75 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.recommended {
+  padding: 4rem 0;
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: $color-text-main;
+    text-transform: capitalize;
+  }
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @media (min-width: map-get($grid-breakpoints, lg)) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+  }
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__image-wrapper {
+    background-color: #F8F8F8;
+    margin-bottom: 20px;
+    aspect-ratio: 1 / 1; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    img {
+      width: 80%;
+      height: auto;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $color-text-main;
+  }
+
+  &__desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: lighten($color-text-main, 20%);
+    margin-bottom: 10px;
+  }
+
+  &__price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: auto;
+    color: $color-text-main;
+  }
+}

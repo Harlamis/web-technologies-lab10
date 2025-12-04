@@ -1,0 +1,9 @@
+section.about
+    .about__image-wrapper
+        img(src=`/src/assets/${about.image}` alt="Nothing Technology")
+    .container
+        .about__content
+            h2.about__title= about.title
+            .about__text-block
+                each paragraph in about.text
+                    p= paragraph

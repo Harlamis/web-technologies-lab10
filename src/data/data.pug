@@ -1,5 +1,81 @@
-- const navLinks = [{href: '#favourite', text: 'Мої улюблені солодощі'}, {href: '#tip', text: 'Порада від Yummy'}]
+- const navLinks = div({href: '#products', text: 'Products'}, {href: '#store', text: 'Login'},="", {href: "#cart", text:"Cart(0)"}) 
 
-- const cards = [{image: 'card1.png', title: 'Червоний мак', description: 'Пралене з додаванням карамельної крихти, пасти ядер горіхів фундука та мигдалюпокрите шоколадною глазурʼю'}, {image: 'card2.png', title: 'Сливки-ленивки', description: 'Світлі вафельні листи, поєднані молочно-вершковою начинкою та покриті глазур’ю.'}, {image: 'card3.png', title: 'Ліщина', description: 'Праліне з додаванням подрібненої та тертої ліщини та мигдалю, покрите шоколадною глазур’ю.'}]
+- const cards = 
+[{
+    image: 'phone1.png',
+    title: 'Phone(1)',
+    description: 'Designed with instinct, to bring joy back to the everyday. Through the Glyph Interface, a perfected OS and exceptional dual camera. All startlingly fast.',
+    price: "$499.00"
+    },
+ {
+    image: 'headphones1.png',
+    title: 'Ear(2)',
+    description: 'Perfecting the path from artist to ear. So that music sounds just as it was intended.',
+    price: "$149.00"
+    },
+ {
+    image: 'headphones2.png', 
+    title: 'Ear(stick)', 
+    description: 'Tech you can’t feel. Leaving just space for sound to come to life. Powered by custom sound technology.', 
+    price: "$119.00"
+    }]
 
-- const sweets = ['Чорний шоколад', 'Зефір', 'Пастила', 'Мармелад', 'Мед', 'Халва', 'Цукати']
+- const hero = { title: 'Bring joy back to the everyday', image: 'hero-phone.png' }
+const categories = [
+    {
+      title: 'All products',
+      image: 'cat-parrots.png',
+      type: 'wide', // Широкий блок
+      hasLabel: true
+    },
+    {
+      title: '', // Без назви
+      image: 'cat-case.png',
+      type: 'normal', // Вузький блок
+      hasLabel: false
+    },
+    {
+      title: 'Audio',
+      image: 'cat-audio.png',
+      type: 'normal',
+      hasLabel: true
+    },
+    {
+      title: '',
+      image: 'cat-stick.png',
+      type: 'wide',
+      hasLabel: false
+    },
+    {
+      title: 'Accessories',
+      image: 'cat-phone.png',
+      type: 'wide',
+      hasLabel: true
+    },
+    {
+      title: '',
+      image: 'cat-charger.png',
+      type: 'normal',
+      hasLabel: false
+    }
+  ]
+
+  const about = {
+    image: 'about-bg.png',
+    title: 'About us',
+    text: [
+      "We’re a London-based tech company on a mission to remove barriers between people and technology.",
+      "To do this, we’re crafting intuitive, flawlessly connected products that improve our lives without getting in the way. No confusing tech-speak. No silly product names. Just artistry, passion and trust. And products we’re proud to share with our friends and family. Simple.",
+      "Because beautiful tech shouldn’t be complicated."
+    ]
+  }
+
+  const contact = {
+    phone: '+1 234 5555-55-55',
+    email: 'hello@nothing.com',
+    address: [
+      '400 first ave.',
+      'suite 700',
+      'Minneapolis, MN 55401'
+    ]
+  }

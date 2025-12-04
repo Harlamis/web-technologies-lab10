@@ -1,0 +1,16 @@
+include mixins/button
+section.categories
+    .container
+        h2.categories__title Browse Nothing products by category
+        
+        .categories__grid
+            each item in categories
+                .category-item(class=`category-item--${item.type}`)
+                    .category-item__image-wrapper
+                        img(src=`/src/assets/${item.image}` alt=item.title || 'Category image')
+                    
+                    if item.hasLabel
+                        h3.category-item__label= item.title
+
+        .categories__footer
+             +btn('View all', '#')

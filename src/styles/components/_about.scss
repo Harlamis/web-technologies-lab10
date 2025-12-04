@@ -1,0 +1,61 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.about {
+  padding-bottom: 6rem;
+
+  &__image-wrapper {
+    width: 100%;
+    margin-bottom: 3rem;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @media (min-width: map-get($grid-breakpoints, lg)) {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr); 
+      gap: 30px;
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $color-text-main;
+    margin-bottom: 1rem;
+
+    @media (min-width: map-get($grid-breakpoints, lg)) {
+      grid-column: span 4; 
+      font-size: 2.5rem;
+      margin-bottom: 0;
+    }
+  }
+
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @media (min-width: map-get($grid-breakpoints, lg)) {
+      grid-column: 6 / span 7;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: $color-text-main;
+    }
+  }
+}

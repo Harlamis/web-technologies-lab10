@@ -1,0 +1,15 @@
+mixin inputField(name, placeholder, type='text', value='', classname='')
+    .input-wrapper(class=classname)
+        if type === 'textarea'
+            textarea.input(
+                name=name 
+                placeholder=placeholder 
+                rows="5"
+            )&attributes(attributes)= value
+        else
+            input.input(
+                type=type 
+                name=name 
+                placeholder=placeholder 
+                value=value
+            )&attributes(attributes)

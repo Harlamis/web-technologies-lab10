@@ -1,0 +1,73 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  padding-top: 80px;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: calc(100vh - 80px);
+  }
+
+  &__image-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    
+    @media (min-width: map-get($grid-breakpoints, lg)) {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100%;
+      width: auto;
+      z-index: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: cover;
+    
+    @media (min-width: map-get($grid-breakpoints, lg)) {
+      height: 100%;
+      max-height: none;
+      width: auto;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    padding-bottom: 2rem;
+    margin-top: auto;
+  }
+
+  &__title {
+    font-size: 3rem;
+    line-height: 1.1;
+    font-weight: 500;
+    color: $color-text-main;
+    letter-spacing: -0.02em;
+
+    @media (min-width: map-get($grid-breakpoints, md)) {
+      font-size: 5rem;
+    }
+
+    @media (min-width: map-get($grid-breakpoints, xl)) {
+      font-size: 7rem;
+      max-width: 80%;
+    }
+  }
+}

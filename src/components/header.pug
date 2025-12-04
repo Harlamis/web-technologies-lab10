@@ -1,4 +1,31 @@
+include mixins/button
 header.header
-    .header-inner
-        include logo
-        include navigation
+    input#menu-toggle(type="checkbox" class="menu-checkbox")
+
+    .container.header__inner
+        a.logo(href="/")
+            img(src="/srs/assets/logo.svg", alt="NOTHING (R)")
+
+        .header__actions
+            a.header__icon(href="tel:+123455555555") 
+                img(src="/src/assets/icon-phone.svg", alt="Telephone")
+            label.header__burger(for="menu-toggle")
+                img(src="/src/assets/icon-burger-menu.svg", alt="burger")
+
+
+    nav.overlay-menu
+        .container.mobile-menu__inner
+            .overlay-menu__top
+                a.logo(href="/") 
+                    img(src="/srs/assets/logo.svg", alt="NOTHING (R)")
+                
+                label.overlay-menu__close(for="menu-toggle") 
+                    img(src="/src/assets/icon-cross.svg", alt="Cross")          
+            ul.overlay-menu__list
+                each link in navLinks
+                    li.overlay-menu__item
+                        a.overlay-menu__link(href=link.href)= link.text
+            
+            .overlay-menu__footer
+                p.overlay-menu__phone +1 234 5555-55-55
+                +btn('Call to order', '#', 'button', 'mobile-menu__cta')

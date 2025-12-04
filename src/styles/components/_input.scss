@@ -1,0 +1,35 @@
+@use '../utils/variables' as *;
+
+.input-wrapper {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  
+  font-family: $font-main;
+  font-size: 1rem;
+  color: #2D2D2D;
+  
+  background-color: #F8F8F8; 
+  border: 1px solid transparent; 
+  border-radius: 8px;
+  outline: none;
+  
+  transition: all 0.3s ease;
+
+  &::placeholder {
+    color: #999;
+  }
+
+  &:hover {
+    background-color: darken(#F8F8F8, 3%);
+  }
+
+  &:focus {
+    background-color: white;
+    border-color: #2D2D2D;
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+}}
