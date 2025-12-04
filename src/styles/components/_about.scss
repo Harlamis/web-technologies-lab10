@@ -23,11 +23,12 @@
     flex-direction: column;
     gap: 20px;
 
-    // Вмикаємо сітку вже на ТАБЛЕТІ (md), а не на lg
+    // Сітка вмикається тут
     @media (min-width: map-get($grid-breakpoints, md)) {
       display: grid;
       grid-template-columns: repeat(12, 1fr); 
       gap: 20px;
+      align-items: start; // Щоб текст не розтягувався по висоті, якщо заголовок менший
     }
   }
 
@@ -36,8 +37,9 @@
     font-weight: 700;
     color: $color-text-main;
     margin-bottom: 1rem;
+    line-height: 1.1;
 
-    // На планшеті/десктопі займає 4 колонки (третина екрану)
+    // Заголовок займає 4 колонки (третина)
     @media (min-width: map-get($grid-breakpoints, md)) {
       grid-column: span 4; 
       font-size: 3rem;
@@ -50,9 +52,10 @@
     flex-direction: column;
     gap: 1.5rem;
 
-    // Починаємо з 6-ї колонки (робимо відступ зліва)
+    // Текст починається з 6-ї колонки і йде до кінця (-1)
+    // Це створює "дірку" в одну колонку (5-ту) між заголовком і текстом
     @media (min-width: map-get($grid-breakpoints, md)) {
-      grid-column: 6 / -1; // -1 означає "до кінця ряду"
+      grid-column: 6 / -1; 
     }
 
     p {

@@ -1,6 +1,5 @@
-include mixins/button
 include mixins/input
-
+include mixins/button
 section.contact
     .container
         h2.contact__title Contact us
@@ -10,18 +9,18 @@ section.contact
                 +inputField('name', 'Name', 'text')
                 +inputField('email', 'Email', 'email')
                 +inputField('message', 'Message', 'textarea')
-                
+
                 +btn('Send', false, 'submit', 'contact__submit')
 
             .contact__info
                 .contact__block
                     span.contact__label Phone
                     p.contact__value= contact.phone
-                
+
                 .contact__block
                     span.contact__label Email
                     p.contact__value= contact.email
-                
+
                 .contact__block
                     span.contact__label Address
                     each line in contact.address

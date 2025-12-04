@@ -12,7 +12,7 @@
 
     @media (min-width: map-get($grid-breakpoints, md)) {
       font-size: 3rem;
-      margin-bottom: 4rem; // Більший відступ від заголовка до форми
+      margin-bottom: 4rem;
     }
   }
 
@@ -21,7 +21,7 @@
     flex-direction: column;
     gap: 3rem;
 
-    // Вмикаємо сітку на ТАБЛЕТІ
+    // Сітка тільки для контенту (форма + інфо)
     @media (min-width: map-get($grid-breakpoints, md)) {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
@@ -34,12 +34,12 @@
     display: flex;
     flex-direction: column;
     
-    // Форма займає 6 колонок (половина)
+    // Форма займає 6 колонок (половина ширини)
     @media (min-width: map-get($grid-breakpoints, md)) {
       grid-column: span 6;
     }
 
-    // На великому екрані можна трохи звузити, якщо треба (span 5)
+    // На дуже великих екранах можна зменшити до 5, щоб було більше повітря
     @media (min-width: map-get($grid-breakpoints, xl)) {
         grid-column: span 5;
     }
@@ -56,10 +56,11 @@
     flex-direction: column;
     gap: 2rem;
 
-    // Інфо починається з 8-ї колонки (залишаємо пусте місце посередині)
+    // Інфо починається з 8-ї колонки і до кінця
+    // Це залишає пустий простір (колонку 7) між формою та інфо
     @media (min-width: map-get($grid-breakpoints, md)) {
       grid-column: 8 / -1; 
-      padding-top: 0; // Вирівнюємо по верху з формою
+      padding-top: 1rem; // Невелика корекція, щоб текст рівнявся з полями форми візуально
     }
   }
 
@@ -83,8 +84,7 @@
   }
 }
 
-// Стиль для textarea (глобально або тут)
-textarea.ui-input {
+textarea.input {
   resize: vertical;
   min-height: 150px;
 }
