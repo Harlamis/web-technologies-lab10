@@ -1,10 +1,10 @@
-$color-primary-darker: #111111;
-$color-primary-dark: #292929;
-$color-primary: #999;
-$color-primary-light: #f0f1f4;
-$color-primary-lighter: #f8f8f8;
+$color-black: #2D2D2D;
+$color-gray-light: #F8F8F8;  
+$color-white: #FFFFFF;
+$color-text-muted: #999999;  
 
-$text-color: #292929;
+$color-text-main: $color-black;
+$color-bg-secondary: $color-gray-light;
 $font-main: 'Space Mono', monospace;
 
 $grid-breakpoints: (

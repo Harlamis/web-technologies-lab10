@@ -11,9 +11,9 @@
   
   font-family: $font-main;
   font-size: 1rem;
-  color: #2D2D2D;
+  color: $color-text-main;
   
-  background-color: #F8F8F8; 
+  background-color: $color-gray-light; 
   border: 1px solid transparent; 
   border-radius: 8px;
   outline: none;
@@ -21,15 +21,15 @@
   transition: all 0.3s ease;
 
   &::placeholder {
-    color: #999;
+    color: $color-text-muted;
   }
 
   &:hover {
-    background-color: darken(#F8F8F8, 3%);
+    background-color: darken($color-gray-light, 3%);
   }
 
   &:focus {
-    background-color: white;
-    border-color: #2D2D2D;
-    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+    background-color: $color-white;
+    border-color: $color-black;
+    box-shadow: 0 0 0 4px rgba($color-black, 0.05);
 }}

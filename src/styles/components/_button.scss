@@ -14,8 +14,8 @@
   text-decoration: none;
   line-height: 1;
   
-  background-color: #2D2D2D;
-  color: white;
+  background-color: $color-black;
+  color: $color-white;
   border: 1px solid transparent;
   border-radius: 8px;
   
@@ -23,18 +23,18 @@
   transition: all 0.3s ease;
 
   &:hover {
-    background-color: #404040;
+    background-color: lighten($color: $color-black, $amount: 10%);
     text-decoration: none;
     transform: translateY(-2px);
   }
 
   &:active {
-    background-color: #000000;
+    background-color: $color-black;
     transform: translateY(0);
   }
 
   &:disabled {
-    background-color: #ccc;
+    background-color: $color-text-muted;
     cursor: not-allowed;
     transform: none;
   }
